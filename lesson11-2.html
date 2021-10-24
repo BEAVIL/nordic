@@ -1,0 +1,61 @@
+
+<div class="parent">
+    <img src="https://images.hdqwalls.com/download/mountain-lake-beautiful-night-3840x2400.jpg">
+    <div class="circle active" onclick="select()">
+
+    </div>
+</div>
+<div class="parent">
+    <img src="https://get.wallhere.com/photo/1920x1200-px-building-city-cityscape-Gold-Coast-1270905.jpg">
+    <div class="circle" onclick="select()">
+    
+    </div>
+</div>
+<div class="parent">
+    <img src="https://www.anypics.ru/download.php?file=201210/2560x1600/anypics.ru-13008.jpg">
+    <div class="circle" onclick="select()">
+    
+    </div>
+</div>
+<div class="parent">
+    <img src="https://mobimg.b-cdn.net/v3/fetch/99/99e828c8be5001ceeb856e3c8df9f066.jpeg">
+    <div class="circle" onclick="select()">
+    
+    </div>
+</div>
+<style>
+    .circle{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 1);
+        opacity: 0.3;
+        margin: 10px;
+        transition: opacity 0.8s;
+        
+    }
+
+    .circle:hover{
+        opacity: 1;
+    }
+    .active {
+        opacity: 1;
+    }
+    img{
+        width: 300px;
+        display:none;
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+</style>
+<script>
+    function select() {
+        document.querySelector(".active").closest(".parent").querySelector("img").style.display = "none"
+        document.querySelector(".active").classList.remove("active")
+        event.target.classList.add("active");
+        //ищем картинку рядом
+        //сначала находим родителя, а потом внутри него картинку и даем ей свойства
+        event.target.closest('.parent').querySelector("img").style.display = "block"
+    }
+</script>

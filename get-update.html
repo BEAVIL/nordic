@@ -1,0 +1,82 @@
+<div class="square"> 
+ 
+</div> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<script> 
+ 
+    $.ajaxSetup({async : false}) 
+ 
+    let offset = 0 
+ 
+    setInterval(function () { 
+
+    let response = $.get("https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/getUpdates?offset=" + offset) 
+ 
+    //console.log(response); 
+ 
+    let json = response.responseText 
+ 
+    //console.log(json); 
+
+    let arr = JSON.parse(json) 
+ 
+    if (arr.result.length > 0) { 
+ 
+    //console.log(arr); 
+ 
+    let text = arr.result[0].message.text; 
+      
+    let userId = arr.result[0].message.from.id; 
+ 
+
+ 
+    offset = arr.result[0].update_id + 1; 
+ 
+    console.log(text) 
+        
+
+    let url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=hello'; 
+
+    if ( text == "Привет"){
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=приветствую вас, мой друг'; 
+        }
+    if ( text == "Как дела"){
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=просто пушка, как сам?'; 
+        }
+    if ( text == "Как дела?"){
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=просто пушка, как сам?'; 
+        }
+    if ( text == "Скинь фото"){
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendPhoto?chat_id=' + userId + '&photo=https://phonoteka.org/uploads/posts/2021-05/1622177748_2-phonoteka_org-p-anime-arti-priroda-krasivo-2.jpg'; 
+        }
+    if ( text == "Где ты?"){
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/Sendlocation?chat_id=' + userId + '&latitude=57&longitude=36'; 
+        }
+    if ( text == "Какой сегодня день?"){
+        let messageTime = arr.result[0].message.date;
+
+        let date = new Date()
+
+        let year = date.getFullYear();
+        let month = date.getMonth()+1;
+        let day = date.getDate() ;
+        let hours = date.getHours() ;
+        let minutes = date.getMinutes() ;
+
+        let fulldate = day + "-" + month + "-" + year + "  " + hours + ":" + minutes;
+
+        url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=' + fulldate; 
+        }
+    $.get(url);
+    
+        }   
+ 
+    }, 100); 
+ 
+</script> 
+<style> 
+    .square{ 
+        width: 100px; 
+        height: 100px; 
+    } 
+</style>

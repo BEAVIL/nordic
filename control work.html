@@ -1,0 +1,25 @@
+<div class="square">
+
+</div>
+<input class="location" type="location">
+<input class="location" type="location">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script>
+    $('.square').click(function () {
+
+    let latitude = $('.location').val('')
+    let longitude = $('.location').val('')
+    
+    let urllocation= 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/sendlocation?chat_id=930903330&longitude='+ longitude + '&latitude=' + latitude ;
+
+    $.get(urllocation);
+})
+   
+</script>
+<style>
+    .square{
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+    }
+</style>

@@ -1,0 +1,58 @@
+<div class="square"> 
+ 
+</div> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<script> 
+ 
+    //отключаем параллельные запросы  
+    $.ajaxSetup({async : false}) 
+ 
+    //счеткчик обновлений 
+    let offset = 0 
+ 
+    setInterval(function () { 
+    //отправляем запрос на сервер телеграм и сохроняем ответ в переменню 
+    let response = $.get("https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/getUpdates?offset=" + offset) 
+ 
+    //console.log(response); 
+ 
+    //достаем иммено тест из ответа 
+    let json = response.responseText 
+ 
+    //console.log(json); 
+ 
+    //приобразуем json  в массив 
+    let arr = JSON.parse(json) 
+ 
+    if (arr.result.length > 0) { 
+ 
+    //console.log(arr); 
+ 
+    //находим тест первого сообщения 
+    let text = arr.result[0].message.text; 
+     
+    //определяем id пользователя 
+    let userId = arr.result[0].message.from.id; 
+ 
+ 
+    //формируем  ссылку для отпрвки сообщения 
+    let url = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=' + userId + '&text=hello'; 
+     
+    $.get(url); 
+ 
+    //запоминаем update_id последнего сообщения 
+    offset = arr.result[0].update_id + 1; 
+ 
+    console.log(text) 
+    } 
+ 
+    }, 100); 
+ 
+</script> 
+<style> 
+    .square{ 
+        width: 100px; 
+        height: 100px; 
+    } 
+</style>
+

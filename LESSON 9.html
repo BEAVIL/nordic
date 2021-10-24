@@ -1,0 +1,37 @@
+<div class="inputs">
+    
+</div>
+<div onclick="show()">
+    добавить
+</div>
+<script>
+
+    //создание переменной
+    let test = 22
+
+    //перезаписать переменную
+    test = "привет бро"
+
+    //вывод на экран
+    //console.log(test);
+
+    //переменная - хранилще
+    //функция - действие
+
+    //создание функции
+    function show() {
+        console.log(test);
+        console.log("привет бро");
+        console.log(13)
+
+
+        //innerHTML - ячейка где хранится внутрение содержимое блока
+        //querySelector() - поисковик 
+        document.querySelector("div").innerHTML += "hello world";
+        document.querySelector("div").style.color ="red"
+        document.querySelector("div").style.fontSize = "50px"
+        }
+    function add() {
+        document.querySelector(".inputs").innerHTML+="<div><input type='text'></div>"
+    }
+</script>

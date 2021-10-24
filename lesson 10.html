@@ -1,0 +1,93 @@
+
+
+<div class="square">
+
+</div>
+<div class="container">
+
+</div>
+<style>
+    .square{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    body{
+        padding: 0;
+        margin: 0;
+    }
+</style>
+<script>
+    document.onkeyup = function () {
+
+            let square = document.querySelector(".square")  
+        
+        if (event.keyCode =="37"){
+            let left = getComputedStyle(square).left;
+            let leftnumber = parseInt(left);
+            let leftNew = leftnumber - 25;
+            square.style.left = leftNew
+        }
+        if  (event.keyCode =="38"){
+            let top = getComputedStyle(square).top;
+            let topnumber = parseInt(top)
+            let topNew = topnumber - 25;
+            square.style.top = topNew
+        }
+        if  (event.keyCode =="39"){
+            let left = getComputedStyle(square).left;
+            let leftnumber = parseInt(left)
+            let leftNew = leftnumber + 25;
+            square.style.left = leftNew
+        }
+        if  (event.keyCode =="40"){
+            let top = getComputedStyle(square).top;
+            let topnumber = parseInt(top)
+            let topNew = topnumber + 25;
+            square.style.top = topNew
+        }
+        if  (event.keyCode =="32"){ 
+            let top = getComputedStyle(square).top;
+            let topnumber = parseInt(top)
+            let topNew = topnumber + 400;
+            let left = getComputedStyle(square).left;
+            let leftnumber = parseInt(left)
+            let leftNew = leftnumber + 875;
+            square.style.top = topNew
+            square.style.left = leftNew
+        }
+    }
+
+    function multiply(first,second){
+        
+        let result = first * second;
+        console.log(result);
+        document.querySelector(".container").innerHTML += result + "<br>";
+        console.log(result);
+    }
+
+    
+    multiply(3,5)
+    multiply(27,8)
+    multiply(4557,2567)
+
+
+    function generateText(name,age,job){
+        let text = `
+        Добрый день, ${name} Пиветствуем вас на сайте inordic.ru
+        Мыопределиле что ваш возраст ${age} Вы очень классный специалист и мы
+        знаем что ваша основная работа это ${job}.
+        `
+
+        document.querySelector(".container").innerHTML += text + "<br>";
+        console.log(text);
+    }
+    
+
+    generateText("Павел",13,"програмист")
+    generateText("Тимофей",28,"учитель")
+    generateText("Сосед",27,"програмист")
+</script>

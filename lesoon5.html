@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css animation</title>
+</head>
+<body>
+    <div class="elem">
+
+    </div>
+</body>
+<style>
+
+    @keyframes blink{
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes shape{
+        0%{
+           width: 100px;
+           height: 100px;
+           background-color: dodgerblue;
+        }
+        50%{
+            width: 200px;
+           height: 200px;
+           background-color: crimson;
+           border-radius: 50%;
+        }
+        100%{
+            width: 100px;
+           height: 100px;
+           background-color: dodgerblue;
+            
+            
+        }
+    }
+    @keyframes rotating{
+        0%{
+            transform: rotate(0deg);
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+        }
+        25%{
+            transform: rotate(45deg);
+            border-radius: 25%;
+            background-color: rgb(255, 103, 103);
+            width: 200px;
+            height: 200px;
+        }
+        50%{
+          transform: rotate(90deg);
+          border-radius: 50%;  
+          background-color: aqua;
+          width: 300px;
+            height: 300px;
+        }
+        75%{
+           transform: rotate(135deg);
+           border-radius: 25%;
+           background-color: rgb(255, 103, 103);
+           width: 200px;
+            height: 200px;
+        }
+        100%{
+            transform: rotate(190deg);
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+        }
+    }
+        .elem{
+            width:100px;
+            height:100px;
+            background-color: black;
+            animation: rotating 10s infinite;
+            position: fixed;
+            top: 350px;
+            left: 800px;
+        }
+</style>
+</html>

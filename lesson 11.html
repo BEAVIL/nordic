@@ -1,0 +1,40 @@
+
+<div class="black-square square" onclick="switchborder()">
+
+</div>
+<div onclick="makeblack()"> 
+    make black
+</div>
+<div onclick="makeyellow()">
+    make yellow
+</div>
+<style>
+    .black-square{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }
+    .yellow-circle{
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+        border-radius: 50%;
+    }
+    .border-dash{
+        border: 3px dashed red;
+    }
+</style>
+<script>
+    function makeblack() {
+        document.querySelector(".square").classList.remove("yellow-circle")
+        document.querySelector(".square").classList.add("black-square")
+    }
+    function makeyellow(){
+        document.querySelector(".square").classList.remove("black-square")
+        document.querySelector(".square").classList.add("yellow-circle")
+    }
+    function switchborder() {
+        document.querySelector(".square").classList.toggle("border-dash")
+    }
+
+</script>

@@ -1,0 +1,43 @@
+<div onclick="background()">
+    изменить фон
+</div>
+<div onclick="dellete()">
+    стереть всё
+</div>
+<div onclick="write1()">
+    дописать вниз сообщение
+</div>
+<div onclick="surprise()">
+    сурприз
+</div>
+<div class="wall">
+    
+</div>
+<script>
+    //создание переменной
+
+     //перезаписать переменную
+
+    //создание функции
+    function background() {
+        document.querySelector(".wall").style.background ="red";
+    }
+
+    function write1() {
+        document.querySelector(".wall").innerHTML += 'lol';
+    }
+    function dellete() {
+        document.querySelector(".wall").innerHTML = '';
+    }
+    function surprise() {
+        document.querySelector(".wall").innerHTML = '';
+        document.querySelector(".wall").innerHTML += 'kek';
+    }
+
+</script>
+<style>
+    .wall{
+        width:100px;
+        height: 100px;
+    }
+</style>

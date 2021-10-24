@@ -1,0 +1,57 @@
+<div class="square">
+
+</div>
+<input class="text-input" type="text">
+<input class="photo-input" type="text">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+<script>
+
+    //$- альтернатива всем поисковы методам js
+
+    //$.get("адрес сервера") - отправить запрос на сервер и получить данные
+
+    //$("селектор").click() - вместо onclick= "функция()"
+
+    //задание задержки действия
+    setTimeout(function () {
+        $('.square').css('background-color','red');
+        $('.square').addClass('circle');
+    }, 3000)
+
+    //задание переодического действия
+    setInterval(function () {
+        //$('.square').toggleClass('circle');
+    }, 500);
+
+$('.square').click(function () {
+    $('.square').css('width','300px');
+    $('.square').css('height','300px');
+
+    //получаем содержимое инпута и кладем в переменную
+    let text = $('.text-input').val()
+    let photo = $('.photo-input').val()
+
+
+    //отправлять сообщение в телеграм
+    let urlText = 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendMessage?chat_id=930903330&text='+ text;
+
+    let urlPhoto= 'https://api.telegram.org/bot2020949265:AAFd1RjFto4VQqpMeCAJl_CZ6o-butISSMo/SendPhoto?chat_id=930903330&photo='+ photo;
+
+    //отправка запроса по адреса 
+    $.get(urlText);
+    $.get(urlPhoto);
+
+})
+
+</script>
+<style>
+    .square{
+        width: 100px;
+        height: 100px;
+        background-color: cornflowerblue;
+    }
+    .circle{
+        border-radius: 50%;
+    }
+</style>

@@ -1,0 +1,79 @@
+<div class="elem">
+
+</div>
+<div class="field">
+    <input type="text" />
+</div>
+<div class="links">
+    <div>
+        <a href="#1">ссылка 1</a>
+    </div>
+    <div>
+        <a href="#2">ссылка 2</a>
+    </div>
+    <div>
+        <a href="#3">ссылка 3</a>
+    </div>
+</div>
+    <div class="form">
+        <input type="checkbox">
+        <input type="checkbox">
+    </div>
+<div class="rows">
+    <div>
+
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+        
+    </div>
+    <div>
+
+    </div>
+    </div>
+</div>
+<style>
+    .elem{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+    }
+
+    .elem:hover{
+        width: 500px;
+    }
+    .elem:active{
+        height: 300px;
+    }
+    input:focus{
+        padding: 20px;
+        background-color: blue;
+        color: violet;
+    }
+    a:visited{
+        color: springgreen;
+    }
+    .form input:checked{
+        width: 50px;
+        height: 50px;
+        background-color: tomato;
+    }
+    .rows div {
+        height: 50px;
+        border:2px dashed grey;
+    }
+    .rows div:nth-child(2n + 1){
+        background-color: hotpink;
+    }
+    .rows div:last-child(2n + 1){
+        background-color: rgb(128, 82, 255);
+    }
+</style>

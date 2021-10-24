@@ -1,0 +1,50 @@
+<div class="elem">
+
+</div>
+
+<style>
+    @keyframes rotating{
+        0%{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        25%{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            transform: translate(1100px,0px) rotate(90deg);
+        }
+        50%{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            transform: rotate(180deg);
+            transform: translate(1100px,650px) rotate(180deg);
+
+        }
+        75%{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            transform: rotate(270deg);
+            transform: translate(0px,650px) rotate(270deg);
+
+        }
+        100%{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            transform: rotate(360deg);
+            transform: translate(0px,0px) rotate(360deg);
+        }
+    }
+        .elem{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation: rotating 5s 2s infinite;
+            left: 650px;
+            top: 400px;
+        }
+</style>
