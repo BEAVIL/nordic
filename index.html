@@ -1,0 +1,96 @@
+<!--/ создаем форму для создания авто
+//4 поля марка-модель-фото-мощность
+
+//создаем кнопку по нажатию на которую на экране появляется
+//новая верстка с авто
+
+//при перезагрузке все авто сохраняются
+
+//ШАГИ
+
+//создаем поля
+
+//создаем кнопку
+
+//делаем функцию добавления нового авто
+    //собираем поля из формы - их значения
+    // создаем ассоциативный массив
+    //добавляем эти значения в массив ассоциативный
+    //добавляем этот массив к массиву автомобилей
+    //стираем всю верстку что была
+    //запускаем функцию отрисовки всех авто
+
+//создаем массив авто (лучше в самом верху кода)
+
+//делаем функцию отрисовки машин
+    //считываем в цикле данные из масива авто и вставляем в версту
+    //добавляем верстку на экран-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+    <input type="text" class="mark" placeholder="mark">
+    <input type="text" class="model" placeholder="model">
+    <input type="url" class="photo" placeholder="photo">
+    <input type="text" class="power" placeholder="power">
+    <button class="all">отправить</button>
+    <div class="csquare">
+        
+    </div>
+<script>
+
+    let arr = {}
+    let all = []
+
+    $(".all").click(function(){
+        let mk = $(".mark").val()
+        let ml = $(".model").val()
+        let pt = $(".photo").val()
+        let pr = $(".power").val()
+        console.log(mk)
+        console.log(ml)
+        console.log(pt)
+        console.log(pr)
+        arr.mark = mk
+        arr.model = ml
+        arr.power = pr
+        arr.photo = pt
+        all.push(arr)
+        document.querySelector(".csquare").innerHTML += `
+        <div class="square">
+            <div class='sqim'><img src ="${arr.photo}" /></div>
+            <div class='sqmd'>${arr.model}</div> 
+            <div class='sqmr'>${arr.mark}</div>
+            <div class='sqpw'>${arr.power}</div>
+        </div>
+        `
+        
+
+    })
+</script>
+<style>
+    .square{
+        border: 2px dashed black;
+        height: 300px;
+        width: 200px;
+        margin: 20px 5px;
+    }
+    .csquare{
+        display: flex;
+    }
+    .sqim img{
+        width: 200px;
+        height: 150px;
+    }
+    .sqmd{
+        height: 49px;
+        border: 1px dashed black;
+    }
+    .sqmr{
+        height: 49px;
+        border: 1px dashed black;
+ 
+    }
+    .sqpw{
+        height: 49px;
+        border: 1px dashed black;
+    }
+</style>
