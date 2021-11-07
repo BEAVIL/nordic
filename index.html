@@ -27,11 +27,11 @@
     //добавляем верстку на экран-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
-    <input type="text" class="mark" placeholder="mark">
-    <input type="text" class="model" placeholder="model">
-    <input type="url" class="photo" placeholder="photo">
-    <input type="text" class="power" placeholder="power">
-    <button class="all">отправить</button>
+    <input type="text"  class="name" placeholder="name">
+    <input type="text"  class="model" placeholder="model">
+    <input type="url"   class="photo" placeholder="photo">
+    <input type="text"  class="price" placeholder="price">
+    <button class="all" onclick="addcard()">отправить</button>
     <div class="csquare">
         
     </div>
@@ -40,41 +40,43 @@
     let arr = {}
     let all = []
 
-    $(".all").click(function(){
-        let mk = $(".mark").val()
-        let ml = $(".model").val()
-        let pt = $(".photo").val()
-        let pr = $(".power").val()
+    function addcard(){
+        let mk = document.querySelector(".name").value
+        let ml = document.querySelector(".model").value
+        let pt = document.querySelector(".photo").value
+        let pr = document.querySelector(".price").value
         console.log(mk)
         console.log(ml)
         console.log(pt)
         console.log(pr)
-        arr.mark = mk
+        arr.name = mk
         arr.model = ml
-        arr.power = pr
+        arr.price = pr
         arr.photo = pt
         all.push(arr)
         document.querySelector(".csquare").innerHTML += `
         <div class="square">
-            <div class='sqim'><img src ="${arr.photo}" /></div>
+            <div class="imgx"><img src="https://premiercitrus.com/wp-content/uploads/2018/08/clos_menu.png"></div>
+            <div class='sqim'><img style =" background-image: url(${arr.photo}); background-repeat: no-repeat; background-size: cover; "></div>
             <div class='sqmd'>${arr.model}</div> 
-            <div class='sqmr'>${arr.mark}</div>
-            <div class='sqpw'>${arr.power}</div>
+            <div class='sqmr'>${arr.name}</div>
+            <div class='sqpw'>${arr.price}</div>
         </div>
         `
         
 
-    })
+    }
 </script>
 <style>
     .square{
-        border: 2px dashed black;
+        border: 2px solid black;
         height: 300px;
         width: 200px;
         margin: 20px 5px;
     }
     .csquare{
         display: flex;
+        flex-wrap: wrap;
     }
     .sqim img{
         width: 200px;
@@ -82,15 +84,22 @@
     }
     .sqmd{
         height: 49px;
-        border: 1px dashed black;
+        border: 1px solid black;
     }
     .sqmr{
         height: 49px;
-        border: 1px dashed black;
+        border: 1px solid black;
  
     }
     .sqpw{
         height: 49px;
-        border: 1px dashed black;
+        border: 1px solid black;
+    }
+    .imgx img{
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
 </style>
