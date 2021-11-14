@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="window">
+        <div class="inwindow" id="inwindow">
+
+        </div>
+        <div class="send">
+            <textarea class="textarea" placeholder="meessge">
+
+            </textarea>
+            <div onclick="sendMessage()" class="button" >отправить</div>
+        </div>
+    </div>
+<script>
+        $.ajaxSetup({async:false})
+
+        getMessages()
+
+        setInterval(function() {
+            getMessages();
+            let block = document.getElementById("inwindow");
+            block.scrollTop = block.scrollHeight; ;
+        }, 1000)
+
+    document.onkeyup = function() {
+        if(event.keyCode == 13 ) {
+            sendMessage();
+        }
+    }
+</script>
+</body>
+</html>

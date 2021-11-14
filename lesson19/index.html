@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Button.css">
+    <link rel="stylesheet" href="css/Player.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="buttons">
+        <button class="magic b" onclick="player.upgardeMagic()"><h1>upgrade magic</h1></button>
+        <button class="stamina b" onclick="player.upgardestamina()"><h1>upgrade stamina</h1></button>
+        <button class="accuracy b" onclick="player.upgardeaccuracy()"><h1>upgrade accuracy</h1></button>
+        <button class="power b" onclick="player.upgardePower()"><h1>upgrade power</h1></button> 
+        <button class="hp b" onclick="player.upgardeHp()"><h1>upgrade hp</h1></button>
+    </div>
+    <div class="container">
+
+    </div>
+</body>
+</html>
+<script src="js/Player.js"></script>
+<script>
+    let player = new Player("https://ru-static.z-dn.net/files/d01/4b504067a938c11e6832525df8f1090d.png",'Den')
+
+    document.onkeyup = function() {
+        if (event.keyCode == 32) {
+            player.tellabout();
+        }
+    }
+</script>
+
