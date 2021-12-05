@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изучаем Vue 3</title>
+<meta charset="utf-8" />
+</head>
+<body>
+    <div id="app">
+        <p>умножение</p>
+        <input type="number" v-on:input="doCount" v-model="input1">
+        <input type="number" v-on:input="doCount" v-model="input2">
+        <p>{{result1}}</p>
+
+        <p>деление</p>
+        <input type="number" v-on:input="doCount" v-model="input3">
+        <input type="number" v-on:input="doCount" v-model="input4">
+        <p>{{result2}}</p>
+
+        <p>вычитание</p>
+        <input type="number" v-on:input="doCount" v-model="input5">
+        <input type="number" v-on:input="doCount" v-model="input6">
+        <p>{{result3}}</p>
+
+        <p>сложение</p>
+        <input type="number" v-on:input="doCount" v-model="input7">
+        <input type="number" v-on:input="doCount" v-model="input8">
+        <p>{{result4}}</p>
+    </div>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+Vue.createApp({
+  data() {
+    return {
+        input1 : 0,
+        input2 : 0,
+        input3 : 0,
+        input4 : 0,
+        input5 : 0,
+        input6 : 0,
+        input7 : 0,
+        input8 : 0,
+        result1 : 0,
+        result2 : 0,
+        result3 : 0,
+        result4 : 0,
+    }
+  },
+  methods: {
+    doCount() {
+         this.result1 = this.input1 * this.input2;
+         this.result2 = this.input3 / this.input4;
+         this.result3 = this.input5 - this.input6;
+         this.result4 = this.input7 + this.input8;
+    }
+  }
+}).mount('#app');
+</script>
+</body>
+</html>

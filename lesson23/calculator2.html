@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изучаем Vue 3</title>
+<meta charset="utf-8" />
+</head>
+<body>
+    <div id="app">
+        <p>{{action}}</p>
+        <input type="number" v-model="input1">
+        <input type="number" v-model="input2">
+        <p>{{result}}</p>
+        <div>
+            <div  v-on:click="add">+</div>
+            <div  v-on:click="minus">-</div>
+            <div  v-on:click="multiply">*</div>
+            <div  v-on:click="devide">/</div>
+        </div>
+    </div>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+Vue.createApp({
+  data() {
+    return {
+        input1 : 0,
+        input2 : 0,
+        result : 0,
+        action : "действие"
+    }
+  },
+  methods: {
+    add() {
+        this.result = this.input1 + this.input2;
+        this.action = "сложение";
+    },
+    multiply() {
+        this.result = this.input1 * this.input2;
+        this.action = "умножение";
+    },
+    minus() {
+        this.result = this.input1 - this.input2;
+        this.action = "вычитание";
+    },
+    devide() {
+        this.result = this.input1 / this.input2;
+        this.action = "деление";
+    },
+  }
+}).mount('#app');
+</script>
+</body>
+</html>

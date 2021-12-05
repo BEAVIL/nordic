@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изучаем Vue 3</title>
+<meta charset="utf-8" />
+</head>
+<body>
+  <div id="app">
+    <div>
+      <input type="text" v-on:input="setMessage" />
+      <p>{{message}}</p>
+    </div>
+    <div>
+      <input type="text" v-on:input="setMessage" />
+      <p>{{message1}}</p>
+    </div>
+    <p v-on:click="click">
+      {{clicks}}
+    </p>
+  </div>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+Vue.createApp({
+  data() {
+    return {
+      message: 'Hello Vue 3!',
+      message1: 'hello mega proger',
+      clicks: 0
+    }
+  },
+  methods: {
+    setMessage(event) {
+     event.target.closest('div').querySelector('p').innerHTML = event.target.value;
+    },
+    click() {
+      this.clicks++
+    }
+  }
+}).mount('#app');
+</script>
+</body>
+</html>
