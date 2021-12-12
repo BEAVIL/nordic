@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Изучаем Vue 3</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div id="app">
+
+        <hello></hello>
+
+        <hello></hello>
+
+        <first></first>
+
+        <second></second>
+
+        <user></user>
+    </div>
+    <div id="test">
+        <template-a></template-a>
+        <template-b></template-b>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({});
+
+        let user = {
+            name: "Tom",
+            age: 25
+        }
+
+        app.component("user", {
+            data() {
+                return user
+            },
+            template: "<div><b>{{name}}</b>-{{age}}</div>"
+        }) 
+        app.component('hello', {    
+            template: '<h2>Hello</h2>'
+        });
+        app.component("first", {
+            template: "<p>это параграф</p>"
+        })
+        app.component("second", {
+            template: "<p> änj gfhfuhfa </p>"
+        })
+
+        app.mount('#app');
+
+        //локальная регистрация
+        const templateA = {
+            template: 'änj gthdsq kjrfkmysq rjvgjytyn'
+        }
+
+        const templateB = {
+            template: "dnjhjq kjrfkmys qjvgjytyn"
+        }
+
+        let test = Vue.createApp({
+            components: {
+                "template-a": templateA,
+                "template-b": templateB
+            }
+        })
+        test.mount('#test');
+    </script>
+</body>
+
+</html>
