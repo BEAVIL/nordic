@@ -1,0 +1,190 @@
+    body{
+        overflow-x: scroll;
+        height: 98.5vh;
+    }
+
+    body::-webkit-scrollbar {
+        height: 5px;
+        align-self: flex-end !important;
+        margin-top: 30px;
+      }
+      
+    body::-webkit-scrollbar-track {
+        background-color: #f9f9fd;
+        border-radius: 15px;
+      }
+      
+    body::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        height: 4px;
+        background: linear-gradient(180deg, #00c6fb, #005bea);
+        align-self: flex-end !important;
+        margin-top: 30px;
+    }
+
+    .column::-webkit-scrollbar {
+        width: 10px;
+    }
+      
+    .column::-webkit-scrollbar-track {
+        background-color: rgb(200, 200, 200);
+        border-radius: 15px;
+    }
+      
+    .column::-webkit-scrollbar-thumb {
+        border-radius: 3px;
+        background: linear-gradient(180deg, #ff0000, #001aff);
+    }
+
+    .column{
+        height: 72vh;
+        width: 16vw; background-color: rgb(200, 200, 200);
+        border-radius: 2%;
+        margin: 6% 1%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .columns{
+        justify-content: flex-start !important;
+        align-items: flex-start;
+        display: flex;
+    }
+
+    .column_name{
+        height: 3vh;
+        width: 75%;
+        border: rgb(200, 200, 200) solid 0px;
+        border-radius: 5px ;
+        background-color: rgb(200, 200, 200);
+        text-align: center;
+    }
+
+    .column_name:focus {
+        outline: none;
+        border: rgb(64, 233, 255) solid 2px;
+      }
+
+    .all{
+        margin: 0;
+    }
+
+    .fotc{ 
+        margin: auto auto 0 auto ;
+        height: 3vh;
+        justify-content: center;
+        width: 16vw;
+    }
+
+    .add_card{
+        border-radius:0 0 0 5px ;
+        background-color: rgb(200, 200, 200);
+        outline: none;
+        border: none;
+        margin: 0 5vw;
+        width: 6vw;
+    }
+
+    .top{
+        display: flex;
+    }
+
+    .img_more{
+        width: 20px;
+        height: 20px;
+    }
+
+    .inp_txt{
+        background-color: white;
+        border: none;
+        outline: none;
+        width: 90%;
+        height: 8vh;
+        text-align: center;
+        margin: 2% 5%;
+        border-radius: 5px;
+        overflow: scroll;
+    }
+
+    .card img{
+        width: 90%;
+        height: 30%;
+        margin: 0 5%;
+        border-radius: 5px;
+    }
+    
+    html{
+        background-image: url(../taskboard/img/background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .top_menu{
+        width: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: 0.4;
+        height: 5.5vh;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+    
+    .fake{
+        width: 101vw;
+        position: absolute;
+        height: 4vh;
+        margin-top: -10px;
+        margin-left: -10px;
+        display: flex;
+    }
+
+    .fake img{
+        height: 3.9vh;
+        border-radius: 4px;
+    }
+
+    .top_menu_button{
+        margin: 0 0.2%;
+    }
+
+    #modal-kit {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #card-modal{
+        width: 33vw;
+        min-height: 66vh;
+        background-color: azure;
+        border-radius: 20px;
+        margin: 16vh auto;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .x{
+        width: 20px;
+        height: 20px;
+        background-image: url(img/x.jpg) ;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    textarea{
+        height: 35px;
+        margin: auto;
+    }
+
+    input{
+        height: 35px;
+        margin: auto;
+    }

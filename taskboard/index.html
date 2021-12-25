@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taskbord</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="fake">
+        <div class="top_menu">
+        </div>
+        <img src="img/bords.png" class="bords">
+        <img src="img/plus.png" class="top_menu_button" style="margin-left: 85vw">
+        <img src="img/settings.png" class="top_menu_button">
+        <img src="img/exit.png" class="top_menu_button">
+    </div>
+    <div id="board" class="all">
+        <div class="columns">
+            <div v-for="column in boardData" class="column">
+                <div class="top">
+                    <input v-on:input="saveBoard" v-model="column.name" class="column_name" type="text" placeholder="name of the column">
+                    <img src="img/more.png" class="img_more">
+                    <div v-on:click="deleteColumn(column)"><div class="x" style="margin:0 0 0 10px"></div></div>
+                </div>
+                <div class="cards">
+                    <div v-for="card in column.cards" class="card">
+                        <input v-on:dblclick="openModal(card)" v-on:input="saveBoard" v-model="card.title" type="text" class="inp_txt" placeholder="your text">
+                        <div v-if="card.description">есть описание</div>
+                        <div v-on:click="deleteCard(column,card)" style="height: 20px; width: 20px; margin: 0 auto;"><div class="x"></div> </div>
+                    </div>
+                </div>
+                <div class="fotc">
+                    <button class="add_card" v-on:click="addCard(column)">+ card</button>
+                </div>
+            </div>
+            <div>
+                <button v-on:click="addColumn"> + колонка</button>
+            </div>
+        </div>
+        <div v-if="visible" id="modal-kit">
+            <div id="card-modal">
+                <div style="display: flex;">
+                    <input v-model="modalTitle">
+                    <textarea v-model="modalDescription"></textarea>
+                </div>
+                <div v-on:click="closeModal()" style="height: 21px; width: 21px; margin: auto;"><div class="x" style="margin: auto;"></div></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js.js"></script>
+</body>
+</html>
